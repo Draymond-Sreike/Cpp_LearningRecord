@@ -5,7 +5,7 @@ using namespace std;
 
 class MyInteger
 {
-	friend ostream& operator<<(ostream& cout, MyInteger &myInt);
+	friend ostream& operator<<(ostream& cout, const MyInteger& myInt);
 
 public:
 	/// <summary>
@@ -44,7 +44,7 @@ private:
 	int value;
 };
 
-ostream& operator<<(ostream &cout, MyInteger &myInt)
+ostream& operator<<(ostream &cout, const MyInteger &myInt)
 {
 	cout << "<<运算符操作函数调用" << endl;
 	cout << myInt.value;
@@ -90,9 +90,9 @@ void test01()
 // 测试函数
 void test02()
 {
-	//MyInteger myInt1 = 0;
-	//cout << myInt1 << endl;
-	//cout << ++myInt1 << endl;	// 1
+	MyInteger myInt1 = 0;
+	cout << myInt1 << endl;
+	cout << ++myInt1 << endl;	// 1
 	////MyInteger &temp = myInt1.operator++();
 	//operator<<(cout, myInt1.operator++()) << endl;	// 1
 
@@ -117,21 +117,21 @@ ostream& fun1(ostream& cout, int &fun1_a)
 	return cout;
 }
 
-void test03()
-{
-	int a = 0;
-	//fun1(cout, fun2(a)) << endl;
-	int& b = 10;
-	cout << &a << endl;
-	//cout << &b << endl;
-	//int& b = fun2(a);
-}
+//void test03()
+//{
+//	int a = 0;
+//	//fun1(cout, fun2(a)) << endl;
+//	int& b = 10;
+//	cout << &a << endl;
+//	//cout << &b << endl;
+//	//int& b = fun2(a);
+//}
 
 int main()
 {
 	//test01();
 	//test02();
-	test03();
+	//test03();
 	system("pause");
 	return 0;
 }
