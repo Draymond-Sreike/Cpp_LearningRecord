@@ -21,5 +21,11 @@
     <ClCompile Include="形参是引用，调用传常量.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="递增运算符重载0.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="递增运算符重载_test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
